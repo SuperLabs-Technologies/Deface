@@ -42,7 +42,7 @@ namespace Deface.Compiler.Lexical_Analyzer
 
                 if (!idSwitch && sb.ToString() == "")
                     Tokens.Add(new LexToken() { Value = Code[i].ToString(), Type = type });
-                else
+                
                 if (idSwitch)
                     sb.Append(Code[i]);
                 else if (!idSwitch && sb.ToString() != "")
