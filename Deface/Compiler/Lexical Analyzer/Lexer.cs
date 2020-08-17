@@ -44,14 +44,17 @@ namespace Deface.Compiler.Lexical_Analyzer
                         }
                 }
                 
-                if (!idSwitch && sb.Length > 0)
+                if(!idSwitch)
                 {
-                    Tokens.Add(new LexToken() { Value = sb.ToString(), Type = LexType.Identifier });
-                    sb.Clear();
-                }
+                    if (sb.Length > 0)
+                    {
+                        Tokens.Add(new LexToken() { Value = sb.ToString(), Type = LexType.Identifier });
+                        sb.Clear();
+                    }
 
-                if (!idSwitch && sb.Length == 0)
-                    Tokens.Add(new LexToken() { Value = Code[i].ToString(), Type = type });
+                    if (sb.Length == 0)
+                        Tokens.Add(new LexToken() { Value = Code[i].ToString(), Type = type });
+                }
             }
 
             return Tokens.ToArray();
