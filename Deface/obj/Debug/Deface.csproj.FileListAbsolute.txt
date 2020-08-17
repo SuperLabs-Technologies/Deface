@@ -1,0 +1,7 @@
+D:\LStore\Sources\Sorciet\Deface\Deface\bin\Debug\Deface.exe.config
+D:\LStore\Sources\Sorciet\Deface\Deface\bin\Debug\Deface.exe
+D:\LStore\Sources\Sorciet\Deface\Deface\bin\Debug\Deface.pdb
+D:\LStore\Sources\Sorciet\Deface\Deface\obj\Debug\Deface.csprojAssemblyReference.cache
+D:\LStore\Sources\Sorciet\Deface\Deface\obj\Debug\Deface.csproj.CoreCompileInputs.cache
+D:\LStore\Sources\Sorciet\Deface\Deface\obj\Debug\Deface.exe
+D:\LStore\Sources\Sorciet\Deface\Deface\obj\Debug\Deface.pdb
