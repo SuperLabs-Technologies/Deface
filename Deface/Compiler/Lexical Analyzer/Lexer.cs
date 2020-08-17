@@ -1,8 +1,6 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Deface.Compiler.Lexical_Analyzer
 {
@@ -32,26 +30,28 @@ namespace Deface.Compiler.Lexical_Analyzer
                             break;
                         }
 
+                    case '"':
+                        {
+                            type = LexType.Quote;
+                            break;
+                        }
+
                     default:
                         {
+                            sb.Append(Code[i]);
                             idSwitch = true;
                             break;
                         }
                 }
-
-
-                if (!idSwitch && && sb.Length > 0)
-                    Tokens.Add(new LexToken() { Value = Code[i].ToString(), Type = type });
                 
-                if (idSwitch)
-                    sb.Append(Code[i]);
-                else if (!idSwitch && sb.Length == 0)
+                if (!idSwitch && sb.Length > 0)
                 {
                     Tokens.Add(new LexToken() { Value = sb.ToString(), Type = LexType.Identifier });
                     sb.Clear();
                 }
 
-                
+                if (!idSwitch && sb.Length == 0)
+                    Tokens.Add(new LexToken() { Value = Code[i].ToString(), Type = type });
             }
 
             return Tokens.ToArray();
