@@ -40,12 +40,12 @@ namespace Deface.Compiler.Lexical_Analyzer
                 }
 
 
-                if (!idSwitch && sb.ToString() == "")
+                if (!idSwitch && && sb.Length > 0)
                     Tokens.Add(new LexToken() { Value = Code[i].ToString(), Type = type });
                 
                 if (idSwitch)
                     sb.Append(Code[i]);
-                else if (!idSwitch && sb.ToString() != "")
+                else if (!idSwitch && sb.Length == 0)
                 {
                     Tokens.Add(new LexToken() { Value = sb.ToString(), Type = LexType.Identifier });
                     sb.Clear();
